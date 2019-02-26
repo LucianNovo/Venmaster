@@ -1,0 +1,11 @@
+.error{
+  color:red;
+}
+
+#venmoTextArea{
+  height: 40px;
+}
+
+input{
+  margin-bottom: 0px;
+}

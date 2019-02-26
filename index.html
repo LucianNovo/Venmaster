@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<html>
+    <head>
+				<link href="css/style.css" rel="stylesheet">
+				<link href="css/skeleton.css" rel="stylesheet">
+				<link href="css/style.css" rel="stylesheet">
+
+        <meta http-equiv="content-type" content="text/php; charset=utf-8" />
+
+				<script src="js/index.js"></script>
+
+        <title>Site Template - Welcome!</title>
+    </head>
+
+		<body>
+			<div class="container">
+				<h3>VenMaster</h3>
+				<p>When splitting a group dinner proportionally, this form helps the cardholder inform guests how much they owe. It creates a 'markup multiplier' based on the tax and tip of a meal. It then prepares a message that the cardholder can copy-paste-send to guests.</p>
+
+				<p><strong>Subtotal</strong>
+					</br>
+					<input id="subtotal" type="text" placeholder="42.00"></input>
+				</p>
+
+				<p><strong>total</strong>
+					</br>
+					<input id="total" type="text" placeholder="45.99"></input>
+				</p>
+
+				<p><strong>Tip</strong> (as decimal)
+					</br>
+					<input id="tip" type="text" placeholder=".18" onfocusout="calculateMultiplier(event)" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"></input>
+				</p>
+
+				<p><strong>Your venmo handle</strong>
+					</br>
+					<input type="text" id="handle" placeholder="venmoName" onfocusout="calculateMultiplier()"></input>
+				</p>
+
+				<input type="button" onclick="calculateMultiplier()" value="calculate multiplier"></input>
+
+				</br>
+				</br>
+
+				<strong>The Total:</strong> (write this on the last line of the receipt)
+					<pre><code id="receiptTotal" class="">fill in fields to calculate
+					</code></pre>
+
+				<strong>Your Guest's Multiplier:</strong>
+					<pre><code id="answer" class="">fill in fields to calculate
+					</code></pre>
+
+				<strong>Venmo Request message:</strong>
+					<pre><code id="venmoTextArea" class="">Venmo @______ for what you ordered times x_____
+					</code></pre>
+					<input type="button" onclick="copyToClipboard()" value="Copy to Message to clipboard"></input>
+			</div>
+		</body>
+</html>
